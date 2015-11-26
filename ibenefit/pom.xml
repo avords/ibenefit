@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.handpay</groupId>
+	<artifactId>ibs-ibenefit</artifactId>
+	<version>1.1.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<hp-ibs-build.sourceEncoding>UTF-8</hp-ibs-build.sourceEncoding>
+		<hp-ibs-spring.version>3.1.4.RELEASE</hp-ibs-spring.version>
+		<hp-ibs-oracle-ojdbc6.version>11.2.0.4</hp-ibs-oracle-ojdbc6.version>
+		<hp-ibs-pagehelper.version>3.6.3</hp-ibs-pagehelper.version>
+		<hp-ibs-mybatis.version>3.2.8</hp-ibs-mybatis.version>
+		<hp-ibs-mybatis-spring.version>1.2.2</hp-ibs-mybatis-spring.version>
+		<hp-ibs-log4j.version>1.2.14</hp-ibs-log4j.version>
+		<hp-ibs-dubbo.version>2.5.3</hp-ibs-dubbo.version>
+		<hp-ibs-zookeeper.version>3.4.6</hp-ibs-zookeeper.version>
+		<hp-ibs-zkclient.version>0.1</hp-ibs-zkclient.version>
+		<hp-ibs-freemarker.version>2.3.20</hp-ibs-freemarker.version>
+		<hp-ibs-commons-fileupload.version>1.3</hp-ibs-commons-fileupload.version>
+		<hp-ibs-aspectj.version>1.7.4</hp-ibs-aspectj.version>
+		<hp-ibs-jackson.version>1.9.13</hp-ibs-jackson.version>
+		<hp-ibs-junit.version>4.11</hp-ibs-junit.version>
+		<hp-ibs-javax.servlet-api.version>3.1.0</hp-ibs-javax.servlet-api.version>
+		<hp-ibs-javax.servlet.jsp-api.version>2.3.1</hp-ibs-javax.servlet.jsp-api.version>
+		<hp-ibs-jdk.version>1.6</hp-ibs-jdk.version>
+		<hp-ibs-encoding.version>UTF-8</hp-ibs-encoding.version>
+		<hp-ibs-maven-compiler-plugin.version>3.1</hp-ibs-maven-compiler-plugin.version>
+		<hp-ibs-maven-shade-plugin.version>2.3</hp-ibs-maven-shade-plugin.version>
+		<hp-ibs-maven-war-plugin.version>2.6</hp-ibs-maven-war-plugin.version>
+		<springside.version>4.0.1.GA</springside.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<sitemesh.version>2.4.2</sitemesh.version>
+		<activemq.version>5.7.0</activemq.version>
+		<ehcache.version>2.6.2</ehcache.version>
+		<hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+		<jackson.version>2.1.2</jackson.version>
+		<httpclient.version>4.2.2</httpclient.version>
+		<spring-data-jpa.version>1.2.0.RELEASE</spring-data-jpa.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.6</jdk.version>
+
+
+		<ibs-entity-admin-version>1.1.0</ibs-entity-admin-version>
+		<ibs-entity-base-version>1.0.0</ibs-entity-base-version>
+		<ibs-entity-common-version>1.0.0</ibs-entity-common-version>
+		<ibs-entity-hr-version>1.1.3-SNAPSHOT</ibs-entity-hr-version>
+		<ibs-entity-jdf-version>1.0.0</ibs-entity-jdf-version>
+		<ibs-entity-log-version>1.0.0</ibs-entity-log-version>
+		<ibs-entity-member-version>1.1.0</ibs-entity-member-version>
+		<ibs-entity-order-version>1.3.3-SNAPSHOT</ibs-entity-order-version>
+		<ibs-entity-permission-version>1.1.0</ibs-entity-permission-version>
+		<ibs-entity-physical-version>1.4.3-SNAPSHOT</ibs-entity-physical-version>
+		<ibs-entity-product-version>1.0.3-SNAPSHOT</ibs-entity-product-version>
+		<ibs-entity-welfare-version>1.0.3-SNAPSHOT</ibs-entity-welfare-version>
+		<ibs-entity-report-version>1.1.1-SNAPSHOT</ibs-entity-report-version>
+		<ibs-jdf-interface-version>1.4.3-SNAPSHOT</ibs-jdf-interface-version>
+		<ibs-jdf-service-version>1.2.3-SNAPSHOT</ibs-jdf-service-version>
+		<ibs-jdf-web-version>1.2.0</ibs-jdf-web-version>
+		<ibs-i-admin-version>1.0.0</ibs-i-admin-version>
+		<ibs-i-base-version>1.1.0</ibs-i-base-version>
+		<ibs-i-common-version>1.0.0</ibs-i-common-version>
+		<ibs-i-hr-version>1.1.3-SNAPSHOT</ibs-i-hr-version>
+		<ibs-i-log-version>1.0.0</ibs-i-log-version>
+		<ibs-i-member-version>1.1.0</ibs-i-member-version>
+		<ibs-i-order-version>1.1.3-SNAPSHOT</ibs-i-order-version>
+		<ibs-i-permission-version>1.5.0-SNAPSHOT</ibs-i-permission-version>
+		<ibs-i-physical-version>1.4.3-SNAPSHOT</ibs-i-physical-version>
+		<ibs-i-product-version>1.1.3-SNAPSHOT</ibs-i-product-version>
+		<ibs-i-report-version>1.1.2-SNAPSHOT</ibs-i-report-version>
+		<ibs-i-search-version>1.0.0</ibs-i-search-version>
+		<ibs-i-weixin-version>1.3.0-SNAPSHOT</ibs-i-weixin-version>
+		<ibs-i-welfare-version>1.0.3-SNAPSHOT</ibs-i-welfare-version>
+		<ibs-s-admin-version>1.1.0</ibs-s-admin-version>
+		<ibs-s-base-version>1.1.0</ibs-s-base-version>
+		<ibs-s-common-version>1.4.1-SNAPSHOT</ibs-s-common-version>
+		<ibs-s-hr-version>1.1.3-SNAPSHOT</ibs-s-hr-version>
+		<ibs-s-log-version>1.1.0</ibs-s-log-version>
+		<ibs-s-member-version>1.7.5-SNAPSHOT</ibs-s-member-version>
+		<ibs-s-order-version>1.1.3-SNAPSHOT</ibs-s-order-version>
+		<ibs-s-permission-version>1.1.0</ibs-s-permission-version>
+		<ibs-s-physical-version>1.5.3-SNAPSHOT</ibs-s-physical-version>
+		<ibs-s-product-version>1.1.3-SNAPSHOT</ibs-s-product-version>
+		<ibs-s-report-version>1.1.3-SNAPSHOT</ibs-s-report-version>
+		<ibs-s-search-version>1.1.0-SNAPSHOT</ibs-s-search-version>
+		<ibs-s-task-version>1.1.3-SNAPSHOT</ibs-s-task-version>
+		<ibs-s-weixin-version>0.0.1</ibs-s-weixin-version>
+		<ibs-s-welfare-version>1.1.3-SNAPSHOT</ibs-s-welfare-version>
+		<ibs-w-admin-version>1.1.3-SNAPSHOT</ibs-w-admin-version>
+		<ibs-w-common-version>1.0.0</ibs-w-common-version>
+		<ibs-w-employee-version>1.1.3-SNAPSHOT</ibs-w-employee-version>
+		<ibs-w-home-version>1.1.0</ibs-w-home-version>
+		<ibs-w-hr-version>1.1.3-SNAPSHOT</ibs-w-hr-version>
+		<ibs-w-vendor-version>1.3.3-SNAPSHOT</ibs-w-vendor-version>
+		<ibs-w-weixin-version>0.0.1</ibs-w-weixin-version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-jdf</artifactId>
+				<version>${ibs-entity-jdf-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-admin</artifactId>
+				<version>${ibs-entity-admin-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-base</artifactId>
+				<version>${ibs-entity-base-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-common</artifactId>
+				<version>${ibs-entity-common-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-hr</artifactId>
+				<version>${ibs-entity-hr-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-log</artifactId>
+				<version>${ibs-entity-log-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-member</artifactId>
+				<version>${ibs-entity-member-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-order</artifactId>
+				<version>${ibs-entity-order-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-permission</artifactId>
+				<version>${ibs-entity-permission-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-physical</artifactId>
+				<version>${ibs-entity-physical-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-product</artifactId>
+				<version>${ibs-entity-product-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-welfare</artifactId>
+				<version>${ibs-entity-welfare-version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-entity-report</artifactId>
+				<version>${ibs-entity-report-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-admin</artifactId>
+				<version>${ibs-i-admin-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-base</artifactId>
+				<version>${ibs-i-base-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-jdf-interface</artifactId>
+				<version>${ibs-jdf-interface-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-jdf-service</artifactId>
+				<version>${ibs-jdf-service-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-jdf-web</artifactId>
+				<version>${ibs-jdf-web-version}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-common</artifactId>
+				<version>${ibs-i-common-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-hr</artifactId>
+				<version>${ibs-i-hr-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-log</artifactId>
+				<version>${ibs-i-log-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-member</artifactId>
+				<version>${ibs-i-member-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-order</artifactId>
+				<version>${ibs-i-order-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-permission</artifactId>
+				<version>${ibs-i-permission-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-physical</artifactId>
+				<version>${ibs-i-physical-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-product</artifactId>
+				<version>${ibs-i-product-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-report</artifactId>
+				<version>${ibs-i-report-version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-search</artifactId>
+				<version>${ibs-i-search-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-weixin</artifactId>
+				<version>${ibs-i-weixin-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.handpay</groupId>
+				<artifactId>ibs-i-welfare</artifactId>
+				<version>${ibs-i-welfare-version}</version>
+			</dependency>
+
+
+
+
+
+			<dependency>
+				<groupId>oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>${hp-ibs-oracle-ojdbc6.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>${hp-ibs-pagehelper.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>${hp-ibs-zookeeper.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${hp-ibs-mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${hp-ibs-mybatis-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<exclusions>
+					<exclusion>
+						<groupId>io.netty</groupId>
+						<artifactId>netty</artifactId>
+					</exclusion>
+
+				</exclusions>
+				<version>0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${hp-ibs-dubbo.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.2.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${spring-data-jpa.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>junit</groupId>
+						<artifactId>junit-dep</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${hp-ibs-aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${hp-ibs-aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${hp-ibs-freemarker.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${hp-ibs-commons-fileupload.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-xc</artifactId>
+				<version>${hp-ibs-jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-jaxb-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.9.11</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${ehcache.version}</version>
+			</dependency>
+
+			<!-- AOP begin -->
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>2.2.2</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm</artifactId>
+				<version>3.3.1</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.10</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>0.9.5-pre6</version>
+			</dependency>
+			<dependency>
+				<groupId>opensymphony</groupId>
+				<artifactId>sitemesh</artifactId>
+				<version>${sitemesh.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-core</artifactId>
+				<version>${activemq.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.activemq.protobuf</groupId>
+						<artifactId>activemq-protobuf</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework.osgi</groupId>
+						<artifactId>spring-osgi-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.osgi</groupId>
+						<artifactId>org.osgi.core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>1.6.1</version>
+				<exclusions>
+					<exclusion>
+						<groupId>xml-apis</groupId>
+						<artifactId>xml-apis</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4.5</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.extremecomponents</groupId>
+				<artifactId>extremecomponents</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>3.10-FINAL</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>3.10-FINAL</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml-schemas</artifactId>
+				<version>3.10-FINAL</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib-ext-spring</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.owasp.esapi</groupId>
+				<artifactId>esapi</artifactId>
+				<version>2.1.0</version>
+				<exclusions>
+					<exclusion>
+						<groupId>xml-apis</groupId>
+						<artifactId>xml-apis</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>xml-apis</groupId>
+						<artifactId>xml-apis-ext</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>xerces</groupId>
+						<artifactId>xercesImpl</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.samba.jcifs</groupId>
+				<artifactId>jcifs</artifactId>
+				<version>1.3.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.1.0.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>4.3.1.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${hp-ibs-spring.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${hp-ibs-junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${hp-ibs-log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${hp-ibs-javax.servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${hp-ibs-javax.servlet.jsp-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins><!-- 全局项目构建过程 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- 指定编译目标平台为JDK1.6 -->
+					<source>${hp-ibs-jdk.version}</source>
+					<target>${hp-ibs-jdk.version}</target>
+					<encoding>${hp-ibs-encoding.version}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!-- 1.编译插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${hp-ibs-maven-compiler-plugin.version}</version>
+				</plugin>
+				<!-- 2.打包插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${hp-ibs-maven-shade-plugin.version}</version>
+				</plugin>
+				<!-- 3.war插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${hp-ibs-maven-war-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>handpay-releases</id>
+			<url>http://mvnrep.handpay.com.cn/nexus/content/repositories/handpay-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>handpay-snapshots</id>
+			<url>http://mvnrep.handpay.com.cn/nexus/content/repositories/handpay-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<modules>
+		<module>../entity-hr</module>
+		<module>../entity-member</module>
+		<module>../entity-order</module>
+		<module>../entity-physical</module>
+		<module>../entity-product</module>
+		<module>../entity-report</module>
+		<module>../entity-welfare</module>
+		<module>../i-hr</module>
+		<module>../i-order</module>
+		<module>../i-permission</module>
+		<module>../i-physical</module>
+		<module>../i-product</module>
+		<module>../i-report</module>
+		<module>../i-weixin</module>
+		<module>../i-welfare</module>
+		<module>../ibs-jdf-interface</module>
+		<module>../ibs-jdf-service</module>
+		<module>../ibs-jdf-web</module>
+		<module>../s-hr</module>
+		<module>../s-order</module>
+		<module>../s-physical</module>
+		<module>../s-product</module>
+		<module>../s-report</module>
+		<module>../s-task</module>
+		<module>../s-welfare</module>
+		<module>../w-admin</module>
+		<module>../w-employee</module>
+		<module>../w-hr</module>
+	</modules>
+</project>
